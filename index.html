@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishal Pandey | Professional Profile</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #0ea5e9;
+            --accent: #10b981;
+            --light: #f8fafc;
+            --dark: #0f172a;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            background-color: #f0f7ff;
+            background-image: linear-gradient(135deg, #e0f2fe 0%, #f0fdfa 100%);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+        
+        .profile-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .profile-header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(30deg);
+        }
+        
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .section-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        
+        .section-title {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            color: var(--primary);
+            font-weight: 700;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 30px;
+            border-left: 3px solid var(--secondary);
+        }
+        
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -10px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: white;
+            border: 3px solid var(--secondary);
+        }
+        
+        .skill-bar {
+            height: 10px;
+            background-color: #e2e8f0;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            border-radius: 5px;
+        }
+        
+        .certificate-badge {
+            background: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 30px;
+            display: inline-block;
+            margin: 5px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        
+        .certificate-badge:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+        }
+        
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 8px;
+            font-size: 1.3rem;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px);
+        }
+        
+        .fb-bg { background: #3b5998; }
+        .insta-bg { background: #e1306c; }
+        .twitter-bg { background: #1da1f2; }
+        .yt-bg { background: #ff0000; }
+        .linkedin-bg { background: #0077b5; }
+        .github-bg { background: #333; }
+        .threads-bg { background: #000; }
+        
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0;
+        }
+        
+        .contact-info i {
+            width: 30px;
+            color: var(--secondary);
+        }
+        
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="profile-header text-center position-relative">
+        <div class="container py-5">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjt6sEdy9D6_e60Qxaqqobl4ePUaLu2IYb_F5YmL8O293Cgm5Uu5FYfCsOI2j6hmS3trsEV995xsgqJxC4cgKipYW9ek84pXZhCGEMf0plvAcrY9VA0PSUHqGtlrdh6FICqP_-BMhPqC1zSOz3yf_JQz5fqJgni-3-RtyzvdRwbVq2O6hwpKf8eHb5Jtg/s2602/IMG_20230414_131413.jpg" 
+                 alt="Vishal Pandey" class="profile-img rounded-circle mb-4">
+            <h1 class="display-4 fw-bold">Vishal Pandey</h1>
+            <p class="lead mb-4">Designer | Developer | Digital Marketer</p>
+            <div class="d-flex justify-content-center flex-wrap">
+                <a href="tel:+919721061660" class="btn btn-light btn-lg rounded-pill me-2 mb-2">
+                    <i class="fas fa-phone me-2"></i>9721061660
+                </a>
+                <a href="mailto:vishalpandeyfevo@gmail.com" class="btn btn-outline-light btn-lg rounded-pill me-2 mb-2">
+                    <i class="fas fa-envelope me-2"></i>Email Me
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container py-5">
+        <div class="row">
+            <!-- Left Column -->
+            <div class="col-lg-4 mb-4">
+                <!-- About Section -->
+                <div class="section-card p-4">
+                    <h3 class="section-title">About Me</h3>
+                    <p>To leverage my skills, experience, and passion for Information Technology in a challenging role that allows me to contribute effectively, grow professionally, and make a positive impact on the organization's success.</p>
+                    
+                    <div class="contact-info mt-4">
+                        <p class="d-flex align-items-center">
+                            <i class="fas fa-map-marker-alt me-3"></i>
+                            Ramwapur Dakahi, Post Katra, Block Ikaura, District Shravasti, Uttar Pradesh, India 271845
+                        </p>
+                        <p class="d-flex align-items-center">
+                            <i class="fas fa-birthday-cake me-3"></i>
+                            Father: Bharat Lal Pandey
+                        </p>
+                        <p class="d-flex align-items-center">
+                            <i class="fas fa-user me-3"></i>
+                            Mother: Suneeta Devi
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Skills Section -->
+                <div class="section-card p-4">
+                    <h3 class="section-title">Professional Skills</h3>
+                    
+                    <div class="mb-4">
+                        <div class="progress-label">
+                            <span>UI Designing</span>
+                            <span>100%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="progress-label">
+                            <span>App Development</span>
+                            <span>100%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="progress-label">
+                            <span>Graphic Designing</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="progress-label">
+                            <span>Web Development</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="progress-label">
+                            <span>Digital Marketing</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Languages Section -->
+                <div class="section-card p-4">
+                    <h3 class="section-title">Languages</h3>
+                    
+                    <div class="mb-4">
+                        <div class="progress-label">
+                            <span>Hindi</span>
+                            <span>100%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="progress-label">
+                            <span>English</span>
+                            <span>55%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 55%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="progress-label">
+                            <span>Urdu</span>
+                            <span>25%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 25%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Column -->
+            <div class="col-lg-8">
+                <!-- Work Experience -->
+                <div class="section-card p-4 mb-4">
+                    <h3 class="section-title">Work Experience</h3>
+                    
+                    <div class="timeline-item">
+                        <h4>Front Office Manager</h4>
+                        <h5 class="text-primary">Hotel Buddha Residency</h5>
+                        <p class="text-muted"><i class="far fa-calendar me-2"></i>Dec 2024 - Current</p>
+                        <p>Overseeing front desk operations, managing staff, and ensuring guest satisfaction in a hospitality setting.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>Front Desk Receptionist</h4>
+                        <h5 class="text-primary">Hotel Shravasti International</h5>
+                        <p class="text-muted"><i class="far fa-calendar me-2"></i>Feb 2025 - Current | Jul 2024 - Dec 2024</p>
+                        <p>Greeting visitors, managing calls, and scheduling appointments while maintaining a professional reception area.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>Hotel General Manager</h4>
+                        <h5 class="text-primary">Shalimar Hotel, Gonda</h5>
+                        <p class="text-muted"><i class="far fa-calendar me-2"></i>Nov 2022 - Feb 2023</p>
+                        <p>Oversaw hotel operations, staff management, and guest satisfaction to maintain a profitable establishment.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>Restaurants Cashier</h4>
+                        <h5 class="text-primary">Zaffran Restaurant, J.P. Palace Hotel</h5>
+                        <p class="text-muted"><i class="far fa-calendar me-2"></i>Aug 2022 - Oct 2022</p>
+                        <p>Processed customer orders and payments accurately while maintaining a clean and organized cashier area.</p>
+                    </div>
+                </div>
+                
+                <!-- Education -->
+                <div class="section-card p-4 mb-4">
+                    <h3 class="section-title">Education</h3>
+                    
+                    <div class="timeline-item">
+                        <h4>Maa Pateswari University, Balrampur</h4>
+                        <h5 class="text-primary">BA+LLB</h5>
+                        <p class="text-muted"><i class="far fa-calendar me-2"></i>Currently Studying</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>Online Platforms</h4>
+                        <h5 class="text-primary">W3Schools, Google Skillshop, Facebook Blueprint, Apna College</h5>
+                        <p class="text-muted"><i class="far fa-calendar me-2"></i>Ongoing</p>
+                        <p>Web Development, Digital Marketing, App Development</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>PMKVY Shravasti</h4>
+                        <h5 class="text-primary">Certificate in Retail Sales Associate</h5>
+                        <p class="text-muted"><i class="far fa-calendar me-2"></i>2019</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>C.R.B.B. Inter College, Shravasti</h4>
+                        <h5 class="text-primary">Intermediate (UP Board)</h5>
+                        <p class="text-muted"><i class="far fa-calendar me-2"></i>2020 - 2021</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>I.I.P. Inter College, Gonda</h4>
+                        <h5 class="text-primary">High School (UP Board)</h5>
+                        <p class="text-muted"><i class="far fa-calendar me-2"></i>2017 - 2018</p>
+                    </div>
+                </div>
+                
+                <!-- Certificates -->
+                <div class="section-card p-4">
+                    <h3 class="section-title">Certificates</h3>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-6 mb-3">
+                            <a href="https://app-eu1.hubspot.com/academy/achievements/wr7vp15g/en/1/vishal-pandey/digital-marketing/" target="_blank" class="certificate-badge">
+                                <i class="fas fa-certificate me-2"></i>Digital Marketing Certified
+                            </a>
+                        </div>
+                        
+                        <div class="col-md-6 mb-3">
+                            <a href="https://app-eu1.hubspot.com/academy/achievements/pgsgw707/en/1/vishal-pandey/digital-advertising/" target="_blank" class="certificate-badge">
+                                <i class="fas fa-certificate me-2"></i>Digital Advertising Certified
+                            </a>
+                        </div>
+                        
+                        <div class="col-md-6 mb-3">
+                            <a href="https://www.facebook.com/vishalpandeyone/" target="_blank" class="certificate-badge">
+                                <i class="fas fa-certificate me-2"></i>Google Ads Display Certification
+                            </a>
+                        </div>
+                        
+                        <div class="col-md-6 mb-3">
+                            <a href="https://www.facebook.com/vishalpandeyone/" target="_blank" class="certificate-badge">
+                                <i class="fas fa-certificate me-2"></i>The Fundamentals of Digital Marketing
+                            </a>
+                        </div>
+                        
+                        <div class="col-md-6 mb-3">
+                            <a href="https://www.ratatype.com/u3248263/certificate/" target="_blank" class="certificate-badge">
+                                <i class="fas fa-certificate me-2"></i>Rata Typing Certified
+                            </a>
+                        </div>
+                        
+                        <div class="col-md-6 mb-3">
+                            <a href="https://www.facebook.com/vishalpandeyone/" target="_blank" class="certificate-badge">
+                                <i class="fas fa-certificate me-2"></i>Retail Sales Associate Certified
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div class="container">
+            <h3 class="mb-4">Connect With Me</h3>
+            
+            <div class="social-icons mb-4">
+                <a href="https://www.facebook.com/vishalpandeyone" target="_blank" class="social-icon fb-bg">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://instagram.com/vishalpandeyone" target="_blank" class="social-icon insta-bg">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://twitter.com/vishalpandeyone" target="_blank" class="social-icon twitter-bg">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.youtube.com/@vishalpandeyone" target="_blank" class="social-icon yt-bg">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/vishalpandeyone" target="_blank" class="social-icon linkedin-bg">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/vishalpandeyone" target="_blank" class="social-icon github-bg">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.threads.net/@vishalpandeyone" target="_blank" class="social-icon threads-bg">
+                    <i class="fa-brands fa-threads"></i>
+                </a>
+            </div>
+            
+            <p class="mb-3">© 2023 Vishal Pandey. All Rights Reserved.</p>
+            <p>Designed with ❤️ using Bootstrap</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
